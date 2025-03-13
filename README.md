@@ -37,9 +37,6 @@ Acquisition algorithm : **Parallel Code Phase search acquisition**
 
 ** Four Satellites are acquired**
 
-![image](https://github.com/user-attachments/assets/84d3597b-a623-4d48-a4a9-ba3a3e2e0afc)
-![image](https://github.com/user-attachments/assets/a37639ed-5b1e-4c0e-b7a8-27bc2cf877f1)
-
 Comapred to open-sky environments, less GPS satellites are acquired due to the blockage of buildings.
 
 ## Task 2: Tracking
