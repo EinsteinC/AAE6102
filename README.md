@@ -37,7 +37,7 @@ Acquisition algorithm : **Parallel Code Phase search acquisition**
 
 GPS PRN 16 22 26 27 31 are acquired! The skyplot is shown below:
 
-![image]([https://github.com/user-attachments/assets/5ebe4e29-f3e7-4747-a05d-3d260cfa8b4f](https://github.com/EinsteinC/AAE6102/blob/main/2.JPG))
+![image]（https://github.com/EinsteinC/AAE6102/blob/main/2.JPG）
 
 ### Acquistion result from urban
 
