@@ -124,25 +124,18 @@ The Prompt correlation is significantly greater than Early/Late, indicating that
 The shape of ACF is symmetric and undistorted, indicating the satellite is undistorted and not under the influence of multipath, which is in agreement with the experiment scenario (Open Sky);
 **Above proves that the satellite in open sky is well acquired and tracked**
 
-### 2,4 Tracking result from data urban （PRN18 in urban as an example）
-
-![image](https://github.com/user-attachments/assets/78c5cf3b-513a-4edb-ace3-441da1704d2d)
+### 2,4 Tracking result from data urban 
+![image](https://github.com/EinsteinC/AAE6102/blob/main/7.JPG)
 
 The Q-channel is not always about zero, sometimes even greater than I-channel, which means not all energy are concentrated on I-channel, the carrier phase is not always aligned well
 
-![image](https://github.com/user-attachments/assets/6890c144-abf8-4c6f-8fc1-981b79199ef7)
-
 DLL output (Code Discriminator Output) is similar to that in open-sky.
 
-![image](https://github.com/user-attachments/assets/837709c8-565f-4da8-af7d-3385b688fc60)
 
 The PLL output is not always near zero with great increase during sometimes, indicates that the local carrier is not always synchronized with the received signal carrier and the carrier tracking is not stable.
 
-![image](https://github.com/user-attachments/assets/89f84c68-d367-4d0c-bf0a-d8d851d2f535)
-
 The Prompt correlation is not always significantly greater than Early/Late, sometimes even weaker (**when PLL is greater**), indicating that the carrier phases are not precisely aligned.
 
-![fc619ab07ec3f9a56eb0863fddb3386](https://github.com/user-attachments/assets/3472b606-dcf2-440d-a308-5a119ccfbb24)
 
 Multi-correaltor output is not symmetric, which means multipath distorts the shape of ACF, which will lead to incorrect pseudorange measurement and consequently wore positioning accuracy.
 
