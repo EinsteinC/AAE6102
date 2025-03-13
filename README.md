@@ -180,7 +180,6 @@ v=(A'*C*A)\(A'*C*b');
 ```
 
 ### The positioning result of open-air scenario is shown below, where the yellow dot is the ground truth
-![image](https://github.com/EinsteinC/AAE6102/blob/main/111.JPG)
 
 In open-air environments, the weighted least squares (WLS) solution showcases high accuracy, closely aligning with ground truth measurements. This exceptional precision is primarily due to the lack of prominent signal propagation impairments like multipath interference and non-line-of-sight (NLOS) errors in unobstructed atmospheric conditions.
 
@@ -191,7 +190,6 @@ In open-air environments, the weighted least squares (WLS) solution showcases hi
 
 Urban GNSS positioning suffers from reduced accuracy compared to open environments due to signal obstruction by buildings, multipath reflections, and non-line-of-sight (NLOS) reception, which distort satellite measurements. These challenges degrade geometric diversity (e.g., fewer visible satellites, higher DOP) and introduce meter-level errors. 
 
-![image](https://github.com/EinsteinC/AAE6102/blob/main/444.JPG)
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/555.JPG)
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/666.JPG)
 
