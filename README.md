@@ -227,7 +227,6 @@ The velocity after Extended Kalman Filter is alos well improved compared to WLS.
 
 ### The positioning result of EKF under urban area
 
-![image](https://github.com/EinsteinC/AAE6102/blob/main/000.JPG)
 
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/0001.JPG)
 
