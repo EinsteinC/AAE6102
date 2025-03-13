@@ -217,7 +217,6 @@ In comparison to traditional Weighted Least Squares (WLS) methods, Kalman Filter
 The Kalman Filter provides superior performance over WLS by incorporating temporal continuity, dynamic noise adaptation, and recursive state estimation, leading to more consistent and stable positioning results. Unlike WLS, which treats each epoch independently and is susceptible to jumps caused by measurement noise, the Kalman Filter utilizes a state-space model to propagate estimates forward by considering motion dynamics such as velocity and clock drift. It dynamically adjusts process noise (Q) and measurement noise (R) to suppress outliers and model uncertainties effectively.
 
 ### The positioning result of EKF under open air.
-![image](https://github.com/EinsteinC/AAE6102/blob/main/777.JPG)
 
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/888.JPG)
 
