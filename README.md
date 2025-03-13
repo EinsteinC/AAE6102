@@ -33,11 +33,11 @@ Acquisition algorithm : **Parallel Code Phase search acquisition**
 ### Acquisiton result from data open sky
 
 **5 GPS Satellites are acquired with code delay and doppler shown below**
-![image](https://github.com/user-attachments/assets/dfc85cc2-599e-4d19-a48a-a67c41c1d902)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/13.JPG)
 
 GPS PRN 16 22 26 27 31 are acquired! The skyplot is shown below:
 
-![image](https://github.com/user-attachments/assets/5ebe4e29-f3e7-4747-a05d-3d260cfa8b4f)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/12.JPG)
 
 ### Acquistion result from urban
 
