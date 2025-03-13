@@ -1,4 +1,4 @@
-# AAE6102
+![image](https://github.com/user-attachments/assets/8cfb21b8-a97b-4a9a-b4fb-2b0bb4c9755e)# AAE6102
 AAE6102 asg1
 # AAE6102 Assigment1 Report from CHENG LI
 
@@ -153,7 +153,7 @@ Above is the navigation data message decoded from incoming signal of urban. Coma
 Key parameters extracted from navigation message.
 **Ephemeris Data (31 parameters)**
 
-![image](https://github.com/user-attachments/assets/8726c04c-6d76-4b80-94af-26dca388a5ef)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/14.JPG)
 
 ## Task 4: Position and velocity estimation
 **Weighted least square for positioning**
