@@ -50,11 +50,17 @@ Comapred to open-sky environments, less GPS satellites are acquired due to the b
 
 ## Task 2: Tracking
 ### 2.1 Code Analysis
-The motivation of tracking is to refine carrier frequency and code phase values, keep track.  
+Tracking aims to fine-tune carrier frequency and code phase values for consistent monitoring.
 
-Code tracking: early,late prompt discriminator with spacing 0.5 chips
+In code tracking with early, late, and prompt discriminators spaced at 0.5 chips, the correlator output can be calculated by comparing the received signal with the locally generated code at different points in time.
 
-Calculate the correlator output
+The correlator output for the prompt, early, and late correlations can be calculated using the following formula:
+
+Correlation Output = Σ [Received Signal * Locally Generated Code]
+
+The prompt correlation is calculated by aligning the locally generated code with the received signal at the current time. The early correlation is calculated by aligning the locally generated code slightly earlier, and the late correlation is calculated by aligning the locally generated code slightly later.
+
+By computing these correlations, the tracking system can estimate the alignment between the received signal and the local code, allowing adjustments to be made to refine the carrier frequency and code phase values for accurate tracking.
 ```
             I_E = sum(earlyCode  .* iBasebandSignal);
             Q_E = sum(earlyCode  .* qBasebandSignal);
@@ -104,15 +110,13 @@ Here, multiple correlator with spacing 0.1 chip from -0.5 chip to 0.5 chip are a
 ### 2.3 Tracking result from data open sky (PRN 16 as an Example)
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/5.JPG)
 
-The Q-channel tends to zero: Ideally, the Q-channel contains only noise and residual error, and its value fluctuates around zero， which verifies the carrier phase is aligned.
+The Q-channel approaching zero signifies that it primarily comprises noise and residual error, fluctuating around zero, validating the alignment of the carrier phase.
 
+When the DLL output (Code Discriminator Output) is close to zero, it signifies that the local code aligns with the received signal's code phase, indicating minimal code tracking error.
 
-DLL output (Code Discriminator Output) near zero: indicates that the local code is aligned with the code phase of the received signal and the code tracking error is minimal.
+An PLL output (Phase/Frequency Discriminator Output) near zero indicates that the local carrier is in sync with the received signal carrier, ensuring stable carrier tracking.
 
-
-PLL output (Phase/Frequency Discriminator Output) near zero: indicates that the local carrier is synchronized with the received signal carrier and the carrier tracking is stable.
-
-The Prompt correlation is significantly greater than Early/Late, indicating that the code phases are precisely aligned and the DLL is in a stable tracking state.
+A significantly higher Prompt correlation compared to Early/Late correlations indicates precise alignment of code phases, affirming the DLL's stable tracking state.
 
 **Autocorrelation Function from Multi-correlator output**
 
@@ -122,17 +126,15 @@ The shape of ACF is symmetric and undistorted, indicating the satellite is undis
 ### 2,4 Tracking result from data urban 
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/7.JPG)
 
-The Q-channel is not always about zero, sometimes even greater than I-channel, which means not all energy are concentrated on I-channel, the carrier phase is not always aligned well
+The Q-channel deviating significantly from zero, occasionally exceeding the I-channel, suggests that energy is not solely concentrated on the I-channel, indicating that the carrier phase may not always be well-aligned.
 
-DLL output (Code Discriminator Output) is similar to that in open-sky.
+If the DLL output (Code Discriminator Output) remains consistent with that in an open-sky scenario, it implies that the local code alignment with the received signal code phase is maintained.
 
+Variations in the PLL output, occasionally deviating significantly from zero and showing notable increases at times, indicate that the local carrier may not always be synchronized with the received signal carrier, resulting in unstable carrier tracking.
 
-The PLL output is not always near zero with great increase during sometimes, indicates that the local carrier is not always synchronized with the received signal carrier and the carrier tracking is not stable.
+In instances where the Prompt correlation is not consistently significantly greater than Early/Late correlations, and even weaker at times (especially when PLL values are higher), it suggests that carrier phases are not precisely aligned.
 
-The Prompt correlation is not always significantly greater than Early/Late, sometimes even weaker (**when PLL is greater**), indicating that the carrier phases are not precisely aligned.
-
-
-Multi-correaltor output is not symmetric, which means multipath distorts the shape of ACF, which will lead to incorrect pseudorange measurement and consequently wore positioning accuracy.
+As the multi-correlator output is asymmetric, indicating that multipath effects distort the shape of the Auto-Correlation Function (ACF), incorrect pseudorange measurements may result, leading to reduced positioning accuracy.
 
 **Above proves that the satellite in urban is not well acquired and tracked**
 
@@ -181,7 +183,7 @@ v=(A'*C*A)\(A'*C*b');
 ### The positioning result of open-air scenario is shown below, where the yellow dot is the ground truth
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/111.JPG)
 
-The weighted least squares (WLS) solution demonstrates **high accuracy** in open-air environments, exhibiting close alignment with ground truth measurements. This observed precision can be attributed to the absence of significant signal propagation impairments such as multipath interference and non-line-of-sight (NLOS) errors under unobstructed atmospheric conditions.
+In open-air environments, the weighted least squares (WLS) solution showcases high accuracy, closely aligning with ground truth measurements. This exceptional precision is primarily due to the lack of prominent signal propagation impairments like multipath interference and non-line-of-sight (NLOS) errors in unobstructed atmospheric conditions.
 
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/222.JPG)
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/333.JPG)
@@ -213,8 +215,9 @@ X_k = X_kk + (K * r);
 I = eye(size(X, 1));
 P_k = (I - K * H) * P_kk * (I - K * H)' + K * R * K';
 ```
-Compared to traditional Weighted Least Squares (WLS), Kalman Filter-based positioning exhibits smoother trajectories with fewer abrupt jumps or outliers. This enhanced stability stems from the Kalman Filter’s inherent advantages in dynamic state estimation.
-The Kalman Filter offers superior performance over Weighted Least Squares (WLS) by integrating temporal continuity, dynamic noise adaptation, and recursive state estimation, resulting in smoother, more stable positioning. Unlike WLS, which processes each epoch independently and is prone to measurement noise-induced jumps, the Kalman Filter leverages a state-space model to propagate estimates forward using motion dynamics (velocity and clock drift), while dynamically balancing process noise (Q) and measurement noise (R) to suppress outliers and model uncertainties. 
+In comparison to traditional Weighted Least Squares (WLS) methods, Kalman Filter-based positioning demonstrates smoother trajectories with fewer abrupt jumps or outliers. This improved stability is a result of the Kalman Filter's inherent advantages in dynamic state estimation.
+
+The Kalman Filter provides superior performance over WLS by incorporating temporal continuity, dynamic noise adaptation, and recursive state estimation, leading to more consistent and stable positioning results. Unlike WLS, which treats each epoch independently and is susceptible to jumps caused by measurement noise, the Kalman Filter utilizes a state-space model to propagate estimates forward by considering motion dynamics such as velocity and clock drift. It dynamically adjusts process noise (Q) and measurement noise (R) to suppress outliers and model uncertainties effectively.
 
 ### The positioning result of EKF under open air.
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/777.JPG)
@@ -234,4 +237,4 @@ The velocity after Extended Kalman Filter is alos well improved compared to WLS.
 The velocity after Kalman filter:
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/0002.JPG)
 
-Compared to the open-sky environment, the positioning and velocity are both not so accurate.
+In contrast to the open-sky environment, the accuracy of both positioning and velocity tends to decrease in environments with obstructions or signal interference. Factors such as multipath effects, non-line-of-sight (NLOS) conditions, and signal blockages can lead to reduced accuracy in determining both position and velocity. These environmental challenges can introduce errors and inaccuracies in the measurements and calculations, impacting the overall precision of the positioning and velocity estimates.
