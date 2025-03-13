@@ -179,20 +179,20 @@ v=(A'*C*A)\(A'*C*b');
 ```
 
 ### The positioning result of open-air scenario is shown below, where the yellow dot is the ground truth
-![image](https://github.com/user-attachments/assets/f9209b1d-1ba0-40dc-acae-dcfad9d21c58)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/111.JPG)
 
 The weighted least squares (WLS) solution demonstrates **high accuracy** in open-air environments, exhibiting close alignment with ground truth measurements. This observed precision can be attributed to the absence of significant signal propagation impairments such as multipath interference and non-line-of-sight (NLOS) errors under unobstructed atmospheric conditions.
 
-![image](https://github.com/user-attachments/assets/eae97665-a27f-470b-b9df-61c1d169205f)
-![image](https://github.com/user-attachments/assets/b5f481d8-2eed-43a6-9e54-5564f1663bad)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/222.JPG)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/333.JPG)
 
 ### The positioning result of urban scenario is shown below, where the yellow dot is the ground truth
 
 Urban GNSS positioning suffers from reduced accuracy compared to open environments due to signal obstruction by buildings, multipath reflections, and non-line-of-sight (NLOS) reception, which distort satellite measurements. These challenges degrade geometric diversity (e.g., fewer visible satellites, higher DOP) and introduce meter-level errors. 
 
-![image](https://github.com/user-attachments/assets/7ff39f64-60eb-443d-8142-01e4fa41a4d9)
-![image](https://github.com/user-attachments/assets/a9a73960-67d5-47b6-8a8a-134caf10fce0)
-![image](https://github.com/user-attachments/assets/2b95eb92-24ca-45b8-9e92-0ad5ef8aa55e)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/444.JPG)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/555.JPG)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/666.JPG)
 
 The Velocity by WLS varies very significantly if no filtering.
 ## Task 5: Kalman-filter based positioning and velociy
@@ -217,21 +217,21 @@ Compared to traditional Weighted Least Squares (WLS), Kalman Filter-based positi
 The Kalman Filter offers superior performance over Weighted Least Squares (WLS) by integrating temporal continuity, dynamic noise adaptation, and recursive state estimation, resulting in smoother, more stable positioning. Unlike WLS, which processes each epoch independently and is prone to measurement noise-induced jumps, the Kalman Filter leverages a state-space model to propagate estimates forward using motion dynamics (velocity and clock drift), while dynamically balancing process noise (Q) and measurement noise (R) to suppress outliers and model uncertainties. 
 
 ### The positioning result of EKF under open air.
-![image](https://github.com/user-attachments/assets/4775e670-9c09-48aa-915e-b9680190e555)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/777.JPG)
 
-![image](https://github.com/user-attachments/assets/2e2dec31-5c69-4bdc-984a-d33901594efc)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/888.JPG)
 
 The velocity after Extended Kalman Filter is alos well improved compared to WLS.
 
-![image](https://github.com/user-attachments/assets/6ac7d05a-1bcb-46e9-aadc-746a770ceb2b)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/999.JPG)
 
 ### The positioning result of EKF under urban area
 
-![image](https://github.com/user-attachments/assets/1c6f0ad2-70ca-49ef-91e6-b74c8fd5e124)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/000.JPG)
 
-![image](https://github.com/user-attachments/assets/d72b7f25-4cfd-4838-b222-87fcfb7861bb)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/0001.JPG)
 
 The velocity after Kalman filter:
-![image](https://github.com/user-attachments/assets/b7f19a64-cfe0-4ee7-b7a4-7c29e01f01cc)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/0002.JPG)
 
 Compared to the open-sky environment, the positioning and velocity are both not so accurate.
