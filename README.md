@@ -32,7 +32,7 @@ Acquisition algorithm : **Parallel Code Phase search acquisition**
 **Step 3**：Setting the acquisition threshold and go to fine acquisition
 ### Acquisiton result from data open sky
 
-**5 GPS Satellites are acquired with code delay and doppler shown below**
+**7 GPS Satellites are acquired with code delay and doppler shown below**
 ![image](https://github.com/EinsteinC/AAE6102/blob/main/13.JPG)
 
 GPS PRN 16 22 26 27 31 are acquired! The skyplot is shown below:
