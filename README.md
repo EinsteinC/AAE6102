@@ -146,7 +146,7 @@ Multi-correaltor output is not symmetric, which means multipath distorts the sha
 
 Above is the navigation data message decoded from incoming signal of open sky.
 
-![image](https://github.com/user-attachments/assets/3912012d-3d7c-422f-84a3-fa7bc758c930)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/7.JPG)
 
 Above is the navigation data message decoded from incoming signal of urban. Comapred to the open-sky, the amplitude is not stable, which means the energy is not concentrated on I-channel, again proving that the received signal is not well tracked;
 
