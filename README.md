@@ -3,13 +3,13 @@ AAE6102 asg1
 # AAE6102 Assigment1 Report from CHENG LI
 
 ## Task 1: Acquisition
-The purpose of acquisition is to determine visible satellites and coarse value of **carrier phase** and **code phase** of the satellites signals.  
+The goal of acquisition is to identify observable satellites and approximate values **carrier phase** and **code phase** of the satellites signals.  
 
-**code phase**: To generate a local PRN code to align with the incoming code.  
+**code phase**: To create a local PRN code that synchronizes with the incoming code.  
 
 **carrier phase**: For downconversion (including doppler effect) 
 
-Acquisition algorithm used here: **Parallel Code Phase search acquisition**  
+Acquisition algorithm : **Parallel Code Phase search acquisition**  
 
 **Step 1**: Generate carrier frequency with different doppler shift, the freqstep is 500 Hz here, the frequency range is -7k HZ to 7K hz.
 ```
