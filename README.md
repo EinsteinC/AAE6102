@@ -102,24 +102,19 @@ Here, multiple correlator with spacing 0.1 chip from -0.5 chip to 0.5 chip are a
 ```
 
 ### 2.3 Tracking result from data open sky (PRN 16 as an Example)
-![image](https://github.com/user-attachments/assets/9f877a1b-f4e7-4335-84ec-78406e80fb90)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/5.JPG)
 
 The Q-channel tends to zero: Ideally, the Q-channel contains only noise and residual error, and its value fluctuates around zero， which verifies the carrier phase is aligned.
 
-![image](https://github.com/user-attachments/assets/3861d8ca-689e-40c2-bd93-3bc4a3a47df4)
 
 DLL output (Code Discriminator Output) near zero: indicates that the local code is aligned with the code phase of the received signal and the code tracking error is minimal.
 
-![image](https://github.com/user-attachments/assets/5a1c4749-6351-4903-aa04-a4b4d573adaa)
 
 PLL output (Phase/Frequency Discriminator Output) near zero: indicates that the local carrier is synchronized with the received signal carrier and the carrier tracking is stable.
-
-![image](https://github.com/user-attachments/assets/e7c34ef3-821f-441e-8537-66dd71ca2b07)
 
 The Prompt correlation is significantly greater than Early/Late, indicating that the code phases are precisely aligned and the DLL is in a stable tracking state.
 
 **Autocorrelation Function from Multi-correlator output**
-![image](https://github.com/user-attachments/assets/5feecdfe-e1bb-4038-b1a0-592dc2db1b07)
 
 The shape of ACF is symmetric and undistorted, indicating the satellite is undistorted and not under the influence of multipath, which is in agreement with the experiment scenario (Open Sky);
 **Above proves that the satellite in open sky is well acquired and tracked**
@@ -142,7 +137,7 @@ Multi-correaltor output is not symmetric, which means multipath distorts the sha
 **Above proves that the satellite in urban is not well acquired and tracked**
 
 ## Task 3: Navigation data decoding (PRN 16 Open-Sky and PRN18 urban as an Example)
-![image](https://github.com/user-attachments/assets/25346100-71d7-473d-af67-2d54fb2ac657)
+![image](https://github.com/EinsteinC/AAE6102/blob/main/5.JPG)
 
 Above is the navigation data message decoded from incoming signal of open sky.
 
