@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/8cfb21b8-a97b-4a9a-b4fb-2b0bb4c9755e)# AAE6102
+# AAE6102
 AAE6102 asg1
 # AAE6102 Assigment1 Report from CHENG LI
 
